@@ -19,7 +19,7 @@ class OperaceSeSeznamem:
             OperaceSeSeznamem.ukonceni(self)
         else:
             print("Neplatná volba!!\n")
-            OperaceSeSeznamem.vyber_cinnosti(Pojistenec)
+            OperaceSeSeznamem.vyber_cinnosti(self)
 
 
     def pridani_pojistence(self):
@@ -35,7 +35,7 @@ class OperaceSeSeznamem:
             telefon = input("Zadejte telefon: \n")
             pojistenci.append(Pojistenec(jmeno, prijmeni, vek, telefon))
             print(f"Osoba {jmeno} {prijmeni} byla úspěšně přídána.\n")
-            if OperaceSeSeznamem.dalsi_pojistenec_dotaz(Pojistenec):
+            if OperaceSeSeznamem.dalsi_pojistenec_dotaz(self):
                 pokracovat = True
             else:
                 pokracovat = False
@@ -69,14 +69,14 @@ class OperaceSeSeznamem:
 
 
     def tisk_vyhledaneho_pojistence(self):
-        p = OperaceSeSeznamem.vyhledat_pojistence(Pojistenec)
+        p = OperaceSeSeznamem.vyhledat_pojistence(self)
         if p:
             print("Nalezeno:\n", p)
         else:
             print("Nenalezen žádný záznam")
 
     def vymazat_pojistence(self):
-        p = OperaceSeSeznamem.vyhledat_pojistence(Pojistenec)
+        p = OperaceSeSeznamem.vyhledat_pojistence(self)
         if p:
             print("Nalezený záznam:", p)
             odpoved = False
